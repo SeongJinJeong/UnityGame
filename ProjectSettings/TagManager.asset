@@ -48,3 +48,6 @@ TagManager:
   - name: Canvas
     uniqueID: 3890702961
     locked: 0
+  - name: Background
+    uniqueID: 280791619
+    locked: 0

@@ -7,6 +7,9 @@ public class BackgroundController : MonoBehaviour
     [SerializeField]
     float moveSpeed = 5f;
 
+    [SerializeField]
+    bool isLobby = false;
+
     Camera cam;
     List<GameObject> backgrounds;
     // Start is called before the first frame update
@@ -14,6 +17,7 @@ public class BackgroundController : MonoBehaviour
     {
         cam = Camera.main;
         backgrounds = new List<GameObject>(GameObject.FindGameObjectsWithTag("Background"));
+        gameObject.transform.position = new Vector3(0, 0);
     }
 
     void Update()
@@ -50,7 +54,15 @@ public class BackgroundController : MonoBehaviour
                 lastObjectPos = curPos;
             }
         });
-        float bgWidth = gObject.GetComponent<SpriteRenderer>().size.x;
+
+        float bgWidth;
+        if (isLobby)
+        {
+            bgWidth = gObject.GetComponent<SpriteRenderer>().size.x;
+        } else
+        {
+            bgWidth = gObject.transform.Find("Hills").GetComponent<SpriteRenderer>().bounds.size.x;
+        }
         float pos = bgWidth + lastObjectPos;
         gObject.transform.position = new Vector3(pos, 0);
     }
