@@ -6,6 +6,10 @@ using TMPro;
 
 public class LoadingController : MonoBehaviour
 {
+    [SerializeField]
+    float MIN_TIME = 5f;
+    float pastTime = 0;
+
     int stage = GameManager.CurrStage;
     TextMeshPro loadingText;
     string defaultText = "LOADING GAME . . .";
@@ -17,13 +21,19 @@ public class LoadingController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        pastTime = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine("getSceneAsync");
+        if( pastTime > MIN_TIME )
+        {
+            StartCoroutine("getSceneAsync");
+        } else
+        {
+            pastTime += Time.deltaTime;
+        }
     }
 
     IEnumerator getSceneAsync() {
