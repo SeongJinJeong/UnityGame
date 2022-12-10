@@ -7,9 +7,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     float Default_Jump_Force = 1f;
 
+    [SerializeField]
+    float Move_Speed = 1f;
+
     Vector3 startPos = new Vector3(-8.5f, -3.7f);
     bool isJump = false;
     float prevY = -1f;
+
+    bool isRun = false;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +45,10 @@ public class PlayerController : MonoBehaviour
         if( x != 0)
         {
             moveX(x);
+        } else
+        {
+            isRun = false;
+            gameObject.GetComponent<Animator>().SetBool("isRun", isRun);
         }
     }
     
@@ -57,7 +66,21 @@ public class PlayerController : MonoBehaviour
     void moveX(float x)
     {
         print("X INPUT : " + x);
+        isRun = true;
         float xPos = transform.position.x;
+        if (x == 1)
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
+            transform.position = new Vector3(xPos + Time.deltaTime * Move_Speed, transform.position.y);
+            gameObject.GetComponent<Animator>().SetBool("isRun",isRun);
+
+        }
+        else if(x == -1)
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+            transform.position = new Vector3(xPos - Time.deltaTime * Move_Speed, transform.position.y);
+            gameObject.GetComponent<Animator>().SetBool("isRun", isRun);
+        }
     }
     
     void playJumpAnim()

@@ -673,6 +673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Default_Jump_Force: 1
+  Move_Speed: 1
 --- !u!1 &1554825034
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,17 +858,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4330677524262525059, guid: b9d7eb472d4f46a44a4920456d91d30b, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4330677524262525084, guid: b9d7eb472d4f46a44a4920456d91d30b, type: 3}
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4330677524262525084, guid: b9d7eb472d4f46a44a4920456d91d30b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.761
+      value: -8.46
       objectReference: {fileID: 0}
     - target: {fileID: 4330677524262525084, guid: b9d7eb472d4f46a44a4920456d91d30b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.048
+      value: -3.63
       objectReference: {fileID: 0}
     - target: {fileID: 4330677524262525084, guid: b9d7eb472d4f46a44a4920456d91d30b, type: 3}
       propertyPath: m_LocalPosition.z
