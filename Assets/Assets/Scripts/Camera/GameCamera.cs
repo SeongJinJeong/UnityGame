@@ -9,7 +9,7 @@ public class GameCamera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerPos = GameObject.FindGameObjectWithTag
+        
     }
 
     // Update is called once per frame
