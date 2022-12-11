@@ -44,19 +44,5 @@ public class CloudController : MonoBehaviour
     void resetCloud()
     {
         gameObject.SetActive(false);
-
-        Invoke("spawnCloud", 1);
-    }
-
-    void spawnCloud()
-    {
-        for(int i=0; i< transform.parent.childCount; i++)
-        {
-            if(transform.parent.GetChild(i).gameObject.activeInHierarchy == false)
-            {
-                transform.parent.GetChild(i).gameObject.SetActive(true);
-                break;
-            }
-        }
     }
 }

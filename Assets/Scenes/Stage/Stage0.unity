@@ -180,7 +180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2744392579543890733, guid: 4d385938bff09d745a08eec81f378c6a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d385938bff09d745a08eec81f378c6a, type: 3}
@@ -1048,7 +1048,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 660882750390333306, guid: c0dc34cc07e6d1442936d2c255a84c28, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0dc34cc07e6d1442936d2c255a84c28, type: 3}
@@ -1106,6 +1106,10 @@ PrefabInstance:
     - target: {fileID: 2744392579543890733, guid: 4d385938bff09d745a08eec81f378c6a, type: 3}
       propertyPath: m_Name
       value: Cloud_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2744392579543890733, guid: 4d385938bff09d745a08eec81f378c6a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d385938bff09d745a08eec81f378c6a, type: 3}

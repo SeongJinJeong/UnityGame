@@ -126,4 +126,9 @@ public class PlayerController : MonoBehaviour
             prevY = -1;
         }
     }
-  }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        
+    }
+}
