@@ -20,14 +20,9 @@ public class CloudController : MonoBehaviour
 
     private void OnEnable()
     {
-        if (!isInit)
-            return;
-
-        isInit = false;
         int randomIndex = (int)Mathf.Floor(Random.value * Cloud_Pos_Y.Count);
         float xPos = Camera.main.transform.position.x + 10;
         transform.position = new Vector3(xPos, Cloud_Pos_Y[randomIndex]);
-
     }
 
     // Update is called once per frame
@@ -49,9 +44,8 @@ public class CloudController : MonoBehaviour
     void resetCloud()
     {
         gameObject.SetActive(false);
-        string randomTime = string.Format("{0:0.00}", Random.value * 1);
 
-        Invoke("spawnCloud", float.Parse(randomTime));
+        Invoke("spawnCloud", 1);
     }
 
     void spawnCloud()
