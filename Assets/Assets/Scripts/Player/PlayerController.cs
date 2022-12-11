@@ -25,11 +25,25 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        setRotationDefault();
         checkInput();
         if (isJump)
         {
             playJumpAnim();
         }
+    }
+
+    private void LateUpdate()
+    {
+        if (transform.position.x < -8)
+        {
+            transform.position = new Vector3(-8f, transform.position.y);
+        }
+    }
+
+    void setRotationDefault()
+    {
+        transform.rotation = new Quaternion(0f,0f,0f,0f);
     }
 
     void checkInput()
