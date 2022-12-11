@@ -863,6 +863,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1839985866}
+  - component: {fileID: 1839985867}
   m_Layer: 0
   m_Name: Clouds
   m_TagString: Untagged
@@ -889,6 +890,18 @@ Transform:
   m_Father: {fileID: 256485335}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1839985867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839985865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ebcb0c3ee0621e4d81e3f6c52fa1b0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2011774168
 GameObject:
   m_ObjectHideFlags: 0
@@ -1046,10 +1059,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cloud_1
       objectReference: {fileID: 0}
-    - target: {fileID: 660882750390333306, guid: c0dc34cc07e6d1442936d2c255a84c28, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0dc34cc07e6d1442936d2c255a84c28, type: 3}
 --- !u!1001 &2744392578737221878
@@ -1106,10 +1115,6 @@ PrefabInstance:
     - target: {fileID: 2744392579543890733, guid: 4d385938bff09d745a08eec81f378c6a, type: 3}
       propertyPath: m_Name
       value: Cloud_0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2744392579543890733, guid: 4d385938bff09d745a08eec81f378c6a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d385938bff09d745a08eec81f378c6a, type: 3}
