@@ -10,11 +10,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     float Move_Speed = 1f;
 
+    float Jump_Eanble_Delay = 1f;
+
     Vector3 startPos = new Vector3(-8.5f, -3.7f);
     bool isJump = false;
     float prevY = -1f;
 
     bool isRun = false;
+
+    bool isDead = false;
 
     // Start is called before the first frame update
     void Start()
@@ -25,12 +29,17 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        setRotationDefault();
-        checkInput();
         if (isJump)
         {
             playJumpAnim();
+            Jump_Eanble_Delay += Time.deltaTime;
         }
+
+        if (isDead == false)
+        {
+            setRotationDefault();
+            checkInput();
+        } 
     }
 
     private void LateUpdate()
@@ -38,6 +47,12 @@ public class PlayerController : MonoBehaviour
         if (transform.position.x < -8)
         {
             transform.position = new Vector3(-8f, transform.position.y);
+        }
+
+        float yPos = Camera.main.WorldToViewportPoint(transform.position).y;
+        if ( yPos > 1 || yPos < - 0.5)
+        {
+            setPlayerDie();
         }
     }
 
@@ -117,13 +132,29 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void setPlayerDie()
+    {
+        Time.timeScale = 0;
+        this.isDead = true;
+        transform.Rotate(new Vector3(0, 0, 90f));
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground") && Jump_Eanble_Delay >= 0.2f)
         {
             gameObject.GetComponent<Animator>().SetBool("isJumpDown", false);
             isJump = false;
             prevY = -1;
+            Jump_Eanble_Delay = 0f;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Coin"))
+        {
+            GameObject.Find("Coins").GetComponent<CoinController>().ReturnCoinObject(collision.gameObject);
         }
     }
 
